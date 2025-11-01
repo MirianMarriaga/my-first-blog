@@ -1,0 +1,14 @@
+<!-- Plantilla para mostrar los detalles de una publicación del blog -->
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if post.published_date %} <!-- Verifica si la publicación tiene una fecha de publicación -->
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %} <!-- Fin de la verificación de la fecha de publicación -->
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.text|linebreaksbr }}</p> <!-- Muestra el texto del post, convirtiendo saltos de línea en etiquetas <br> -->
+    </div>
+{% endblock %}
